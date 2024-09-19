@@ -2,10 +2,11 @@
   <div>
     <h4>Pedidos Ingresados</h4>
   </div>
+  @if (listPedido.length > 0 ) {
   <div>
     {{listPedido|json}}
   </div>
-  
+}
 </div>
 <app-delivery-point></app-delivery-point>
 <app-point-of-sell></app-point-of-sell>

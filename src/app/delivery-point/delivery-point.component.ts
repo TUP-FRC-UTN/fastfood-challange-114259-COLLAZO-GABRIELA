@@ -13,17 +13,17 @@ export class DeliveryPointComponent {
   private orderService = inject(PedidosService);
   listPedidosDelivery: Order[]=[];
 
-/* ngOnInit(): void {
+ ngOnInit(): void {
   this.getOrders()
-} */
+} 
 
 getOrders(){
-  this.listPedidosDelivery = this.orderService.getOrders()
+  this.listPedidosDelivery = this.orderService.listPedidosReady
 }
 
 
 readyDelivery(index: number) {
-  this.listPedidosDelivery  = this.orderService.deletePedido(index);
+  this.listPedidosDelivery  = this.orderService.deletePedidoDelivery(index);
 }
 
 

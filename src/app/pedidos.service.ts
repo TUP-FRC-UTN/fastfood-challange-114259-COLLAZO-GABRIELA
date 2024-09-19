@@ -6,6 +6,7 @@ import { Order } from '../models';
 })
 export class PedidosService {
   listPedidos: Order[] = [];
+  listPedidosReady: Order[] = [];
 
   addPedido(p: Order) {
     this.listPedidos.push(p);
@@ -22,5 +23,12 @@ export class PedidosService {
   getOrders(){
     return this.listPedidos;
   }
+
+  addPedidoDelivery(p: Order){
+  return this.listPedidosReady.push(p);
+  }
+  deletePedidoDelivery(index:number){
+    return this.listPedidosReady.splice(index,1);
+    }
 
 }

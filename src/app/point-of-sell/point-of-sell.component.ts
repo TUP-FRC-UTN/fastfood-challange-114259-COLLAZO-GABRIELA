@@ -27,7 +27,8 @@ sendOrder(form: NgForm) {
   if(form.valid){
     this.pedido.name = form.value.name;
     this.pedido.order = form.value.order;
-    this.pedido.number = this.acumulador + 1
+    this.pedido.number = this.acumulador + 1;
+    this.pedido.date = new Date();
     console.log(this.pedido);
     
     this.orderService.addPedido(this.pedido)
@@ -36,7 +37,8 @@ sendOrder(form: NgForm) {
     this.pedido = {
       name: "",
       order:"",
-      number:this.acumulador
+      number:this.acumulador,
+      date: undefined
     }
   } else {
    return alert("Formulario invalido")
