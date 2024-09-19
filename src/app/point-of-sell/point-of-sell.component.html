@@ -1,0 +1,37 @@
+<div>
+   
+    <div class="card" style="border: solid red;">
+        <h3>Componente Point of Sell</h3>
+        <div class="card-body">
+            <form #form="ngForm" class="row g-3" (ngSubmit)="sendOrder(form)">
+                <div class="col-md-4">
+                  <label for="validationServer01" class="form-label">Nombre</label>
+                  <input #name="ngModel"
+            [ngClass]="{'is-invalid': name.invalid  && (name.dirty || name.touched),'is-valid': name.valid }"
+            type="text" class="form-control" name="name" [(ngModel)]="pedido.name" required >
+        @if(name.invalid && (name.dirty || name.touched)){
+        @if(name.getError('required')) {
+        <div class="text-danger">El nombre del cliente es obligatorio</div>
+        }}
+    </div>
+            
+                <div class="col-md-4">
+                    <label for="validationServer01" class="form-label">Order</label>
+                    <input #order="ngModel"
+                    [ngClass]="{'is-invalid': order.invalid  && (order.dirty || order.touched),'is-valid': order.valid }"
+                    type="text" class="form-control" name="order" [(ngModel)]="pedido.order" required >
+                @if(order.invalid && (order.dirty || order.touched)){
+                @if(order.getError('required')) {
+                <div class="text-danger">El pedido es obligatorio</div>
+                }}
+            </div>
+                    
+             
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Order</button>
+                </div>
+              </form>
+        </div>
+      </div>
+    
+</div>
